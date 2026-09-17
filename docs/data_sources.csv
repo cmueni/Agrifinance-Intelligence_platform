@@ -1,0 +1,15 @@
+Source,What it provides,Refresh,Access,Phase
+Lender core banking and origination systems,"Loans, repayments, applications, decisions",Monthly file or API,Confidential,MVP
+Central Bank of Kenya,"CBR, exchange rate, sectoral credit, Agriculture Survey, MSME Survey",Monthly and periodic,Public,MVP
+Kenya National Bureau of Statistics,"CPI, GDP, Economic Survey, trade, enterprise counts",Monthly to annual,Public,MVP
+Kenya Meteorological Department and CHIRPS,"Rainfall, anomalies, seasonal outlooks",Dekadal and monthly,Public,MVP
+National Drought Management Authority,"Drought phase, vegetation condition, forage",Monthly,Public,MVP
+KAMIS and Agriculture and Food Authority,"Farm-gate and wholesale prices, production, licences",Weekly to monthly,Public,MVP
+"Kenya Dairy Board, NCPB, tea and coffee exchanges",Chain-specific prices and volumes,Weekly to monthly,Public,Phase 2
+EPRA,Fuel and electricity prices,Monthly,Public,MVP
+Credit reference bureaus,"Enquiries, arrears at other lenders",Monthly,Highly confidential,Phase 2
+Mobile money and bank statements (with consent),"Inflows, volatility, buyer payments",Monthly,Highly confidential,Phase 2
+SASRA and SACCOs,SACCO agricultural lending,Quarterly,Restricted,Phase 2
+"Cooperatives, processors, offtakers","Deliveries, payments, contracts",Monthly,Confidential,Phase 3
+"Satellite (MODIS, Sentinel, Copernicus)","NDVI, soil moisture, plot monitoring",Fortnightly,Public or confidential at plot level,Phase 3
+"FinAccess (CBK, KNBS, FSD Kenya)",Household and enterprise financial access,Periodic,Public,Phase 2

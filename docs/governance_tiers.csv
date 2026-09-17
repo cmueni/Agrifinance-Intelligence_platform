@@ -1,0 +1,5 @@
+Tier,Data,Who sees it,Control
+Public,"Macro, climate, prices, published surveys and aggregated market views","All users, can be shared externally",No restriction beyond attribution
+Restricted,Market aggregates by chain and county built from lender data,"Subscribing institutions, regulators, DFIs",Shown only where at least 3 institutions and 10 borrowers contribute
+Confidential,An institution's own loan-level and application data,That institution's authorised staff,Row-level security by institution; never visible to peers
+Highly confidential,"Identifiers, bureau data, mobile money and bank statements",Named analysts with consent on file,"Pseudonymised keys, consent register, access logging, Data Protection Act 2019"

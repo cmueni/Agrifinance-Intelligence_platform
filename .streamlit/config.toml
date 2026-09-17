@@ -1,0 +1,67 @@
+[server]
+enableStaticServing = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#1F6F4A"
+backgroundColor = "#F5F4EE"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#1D2B24"
+linkColor = "#1F6F4A"
+borderColor = "#E3E1D6"
+dataframeBorderColor = "#E3E1D6"
+dataframeHeaderBackgroundColor = "#EEF1EA"
+baseRadius = "10px"
+buttonRadius = "8px"
+showWidgetBorder = true
+font = "Plus Jakarta Sans, Segoe UI, Arial, sans-serif"
+headingFont = "Plus Jakarta Sans, Segoe UI, Arial, sans-serif"
+codeFont = "JetBrains Mono, Consolas, monospace"
+baseFontSize = 15
+headingFontWeights = [800, 700, 700, 600, 600, 600]
+metricValueFontWeight = 700
+greenColor = "#2E9E6A"
+orangeColor = "#E8702A"
+redColor = "#D1344B"
+yellowColor = "#E0A100"
+blueColor = "#5B7DB1"
+violetColor = "#7B4FC9"
+chartCategoricalColors = ["#1F6F4A", "#D99A1E", "#3F7CAC", "#8A5A2B", "#3E9B6C", "#D1344B", "#7B4FC9"]
+
+[[theme.fontFaces]]
+family = "Plus Jakarta Sans"
+url = "app/static/fonts/plus-jakarta-sans-latin-400-normal.woff2"
+weight = 400
+[[theme.fontFaces]]
+family = "Plus Jakarta Sans"
+url = "app/static/fonts/plus-jakarta-sans-latin-500-normal.woff2"
+weight = 500
+[[theme.fontFaces]]
+family = "Plus Jakarta Sans"
+url = "app/static/fonts/plus-jakarta-sans-latin-600-normal.woff2"
+weight = 600
+[[theme.fontFaces]]
+family = "Plus Jakarta Sans"
+url = "app/static/fonts/plus-jakarta-sans-latin-700-normal.woff2"
+weight = 700
+[[theme.fontFaces]]
+family = "Plus Jakarta Sans"
+url = "app/static/fonts/plus-jakarta-sans-latin-800-normal.woff2"
+weight = 800
+[[theme.fontFaces]]
+family = "JetBrains Mono"
+url = "app/static/fonts/jetbrains-mono-latin-400-normal.woff2"
+weight = 400
+
+[theme.sidebar]
+backgroundColor = "#12372A"
+secondaryBackgroundColor = "#1B4A38"
+textColor = "#E8F0EA"
+primaryColor = "#F2C14E"
+borderColor = "#2A5A46"
+
+[client]
+toolbarMode = "minimal"

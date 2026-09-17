@@ -1,0 +1,4 @@
+Phase,Data partners,Capabilities,Foundations
+MVP (0 to 6 months),One or two lenders plus public data,"Executive overview, value chain explorer, financing gap, risk and early warning, scenario lab, borrower watchlist","Monthly loan tape mapped to taxonomy; public climate, price and macro feeds; transparent scores"
+Phase 2 (6 to 12 months),"5 or more lenders, SACCOs, bureau","Benchmarking with suppression, inclusion dashboards, product fit, what changed alerts",Bureau and statement data with consent; out-of-time model validation; data quality scorecards
+Phase 3 (12 to 24 months),"Cooperatives, offtakers, insurers, DFIs","Plot-level satellite monitoring, offtaker payment signals, guarantee and blended finance targeting",APIs to value-chain partners; model governance and independent validation; regulator views

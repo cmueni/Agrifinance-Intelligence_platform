@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="56" viewBox="0 0 260 56">
+  <g transform="translate(4,6)">
+    <circle cx="22" cy="22" r="22" fill="#1F6F4A"/>
+    <rect x="10" y="24" width="5" height="10" rx="1.5" fill="#F2C14E"/>
+    <rect x="18" y="18" width="5" height="16" rx="1.5" fill="#F2C14E"/>
+    <rect x="26" y="12" width="5" height="22" rx="1.5" fill="#F2C14E"/>
+    <path d="M31 12 C 38 6, 40 14, 34 18 C 32 16, 31 14, 31 12 Z" fill="#9FD9B4"/>
+  </g>
+  <text x="58" y="25" font-family="Plus Jakarta Sans, Segoe UI, Arial" font-size="17" font-weight="800" fill="#FFFFFF">AgriFinance</text>
+  <text x="58" y="44" font-family="Plus Jakarta Sans, Segoe UI, Arial" font-size="12.5" font-weight="600" fill="#F2C14E">Intelligence Platform</text>
+</svg>

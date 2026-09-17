@@ -1,0 +1,12 @@
+Rule,Family,Trigger,Definition,Severity,Points,Action
+A01,Repayment,Arrears building up,1 to 29 days past due and rising,Medium,12,Call the borrower and confirm the reason and expected harvest or sales date.
+A02,Repayment,30+ days past due,DPD at least 30,High,25,Agree a remedial plan aligned to the next harvest or sales cycle.
+A03,Cash flow,Sales below last season,Inflows 25% or more below the same months last year,High,25,"Visit the business; check volumes, prices and buyer payments."
+A04,Cash flow,Buyer payments slowing,Receivable days up 20 or more in 3 months,Medium,12,Confirm offtaker payment status; consider receivables finance.
+A05,Exposure,Facility near limit,Utilisation above 90%,Medium,12,Review whether the limit matches the seasonal working-capital need.
+A06,Climate,Rainfall failure in county,3-month rainfall anomaly below -25%,High,25,Assess crop or pasture condition; check insurance; consider rescheduling to the next harvest.
+A07,Climate,"Drought alarm, uninsured",NDMA-type drought alarm and no insurance,Critical,40,Escalate to agribusiness credit; plan restructuring before arrears build.
+A08,Market,Commodity price falling,Value-chain price down 10% or more in 3 months,Medium,12,Re-run the cash-flow projection at current prices.
+A09,Market,Margin squeeze,Margin index down 12% or more in 6 months,High,25,Check input-cost pass-through; consider input finance or buyer-linked pricing.
+A10,Structure,Product does not match cash cycle,Term loan or overdraft on a long seasonal cycle,Medium,12,Restructure to seasonal repayments or a structured product at renewal.
+A11,Concentration,Dependent on one buyer,"Largest buyer above 70% of sales, no contract",Low,6,Obtain buyer contract or assignment of proceeds.

@@ -1,0 +1,213 @@
+Code,Domain,Variable,Definition,Unit,Frequency,Granularity,Source,Access,Phase,In prototype
+A01,Credit and portfolio,Outstanding balance,Principal outstanding at month end,KES,Monthly,Loan,Lender core banking system,Confidential,MVP,True
+A02,Credit and portfolio,Loan amount disbursed,Original principal at disbursement,KES,Event,Loan,Lender core banking system,Confidential,MVP,True
+A03,Credit and portfolio,Days past due,Days since the oldest unpaid instalment,Days,Monthly,Loan,Lender core banking system,Confidential,MVP,True
+A04,Credit and portfolio,NPL flag,1 if days past due at least 90 or classified substandard or worse,Flag,Monthly,Loan,"Lender, CBK Prudential Guidelines",Confidential,MVP,True
+A05,Credit and portfolio,NPL ratio,Balance with NPL flag divided by total balance,%,Monthly,Segment,Derived,Restricted,MVP,True
+A06,Credit and portfolio,PAR30,Balance at least 30 days past due divided by total balance,%,Monthly,Segment,Derived,Restricted,MVP,True
+A07,Credit and portfolio,Restructured flag,1 if terms modified due to financial difficulty,Flag,Monthly,Loan,Lender core banking system,Confidential,MVP,True
+A08,Credit and portfolio,Product type,"Seasonal working capital, term loan, overdraft, asset finance, receivables, warehouse receipt, input, contract farming, insurance-linked, group",Category,Event,Loan,Lender product master,Confidential,MVP,True
+A09,Credit and portfolio,Tenor,Contractual term,Months,Event,Loan,Lender core banking system,Confidential,MVP,True
+A10,Credit and portfolio,Interest rate,Annual contractual rate,%,Event,Loan,Lender core banking system,Confidential,MVP,True
+A11,Credit and portfolio,Collateral type,"Title deed, chattels, receivables, warehouse receipt, group guarantee, unsecured",Category,Event,Loan,Lender collateral register,Confidential,MVP,True
+A12,Credit and portfolio,Repayment structure,"Monthly, seasonal balloon, harvest-linked or buyer deduction",Category,Event,Loan,Lender core banking system,Confidential,Phase 2,False
+A13,Credit and portfolio,Utilisation,Drawn balance divided by approved limit,%,Monthly,Loan,Lender core banking system,Confidential,MVP,True
+A14,Credit and portfolio,Write-off amount,Balance written off in the month,KES,Monthly,Loan,Lender finance system,Confidential,Phase 2,False
+A15,Credit and portfolio,Recoveries,Cash recovered on written-off or NPL loans,KES,Monthly,Loan,Lender collections system,Confidential,Phase 2,False
+A16,Credit and portfolio,"Credit growth, 12 months",Balance now divided by balance 12 months earlier minus 1,%,Monthly,Segment,Derived,Restricted,MVP,True
+A17,Credit and portfolio,Lender type,"Tier 1, 2, 3 bank, microfinance bank, SACCO, DFI, fintech",Category,Static,Institution,"CBK, SASRA registers",Public,MVP,True
+A18,Credit and portfolio,Sector credit to agriculture,Gross loans to agriculture by banking sector,KES,Monthly,National,CBK sectoral credit statistics,Public,MVP,False
+B01,Applications and approvals,Application count,Number of credit applications received,Count,Monthly,Segment,Lender loan origination system,Confidential,MVP,True
+B02,Applications and approvals,Amount requested,Amount applied for,KES,Event,Application,Lender loan origination system,Confidential,MVP,True
+B03,Applications and approvals,Approval flag,1 if approved,Flag,Event,Application,Lender loan origination system,Confidential,MVP,True
+B04,Applications and approvals,Approval rate,Approved applications divided by applications,%,Monthly,Segment,Derived,Restricted,MVP,True
+B05,Applications and approvals,Decline reason,"Collateral, cash flow, credit history, climate risk, documentation, sector limit",Category,Event,Application,Lender loan origination system,Confidential,MVP,True
+B06,Applications and approvals,Time to decision,Days from complete application to decision,Days,Event,Application,Lender loan origination system,Confidential,Phase 2,False
+B07,Applications and approvals,Time to disbursement,Days from approval to first disbursement,Days,Event,Application,Lender loan origination system,Confidential,Phase 2,False
+B08,Applications and approvals,Amount approved ratio,Approved amount divided by requested amount,%,Event,Application,Derived,Confidential,Phase 2,False
+B09,Applications and approvals,Demand growth,Applications in last 3 months divided by same months last year minus 1,%,Monthly,Segment,Derived,Restricted,MVP,True
+B10,Applications and approvals,Referral channel,"Branch, agent, cooperative, offtaker, digital",Category,Event,Application,Lender CRM,Confidential,Phase 2,False
+B11,Applications and approvals,Guarantee scheme used,"Credit guarantee cover applied, for example partial guarantee programmes",Flag,Event,Application,"Lender, guarantee scheme administrator",Confidential,Phase 2,False
+B12,Applications and approvals,Pipeline value,Applications under assessment,KES,Weekly,Segment,Lender loan origination system,Confidential,Phase 3,False
+B13,Applications and approvals,Rejected then approved elsewhere,Declined applicant later financed by another institution,Flag,Monthly,Enterprise,Credit reference bureau match,Highly confidential,Phase 3,False
+B14,Applications and approvals,"Farmers borrowing, share",Share of farmers who borrowed in the reference period,%,Annual,National,CBK Agriculture Survey,Public,MVP,True
+B15,Applications and approvals,Source of farmer credit,Share of farmer borrowing by source,%,Annual,National,CBK Agriculture Survey,Public,MVP,True
+B16,Applications and approvals,Credit constraint rate,Share of enterprises that needed credit but did not apply or were declined,%,Annual,National,"CBK MSME Survey, FinAccess",Public,Phase 2,False
+C01,Enterprise profile,Enterprise identifier,Pseudonymised unique enterprise key,ID,Static,Enterprise,Platform key service,Highly confidential,MVP,True
+C02,Enterprise profile,Value chain (level 1),"Primary value chain, 12-chain taxonomy",Category,Static,Enterprise,Lender classification mapped to platform taxonomy,Confidential,MVP,True
+C03,Enterprise profile,Sector group,"Sector grouping of the value chain: livestock, food crops, cash crops, horticulture, industrial crops, blue economy",Category,Static,Enterprise,Lender classification,Confidential,MVP,True
+C04,Enterprise profile,Actor type,"Input supplier, producer, cooperative, aggregator, processor, exporter, distributor",Category,Static,Enterprise,Lender classification,Confidential,MVP,True
+C05,Enterprise profile,County,County of main operation,Category,Static,Enterprise,"Lender KYC, KNBS codes",Confidential,MVP,True
+C06,Enterprise profile,ASAL flag,1 if county classified arid or semi-arid,Flag,Static,County,"NDMA, Ministry of EAC and ASALs",Public,MVP,True
+C07,Enterprise profile,Enterprise size,"Micro, small or medium by turnover and employment",Category,Annual,Enterprise,"Lender KYC, MSE Act definitions",Confidential,MVP,True
+C08,Enterprise profile,Annual turnover,Sales in last 12 months,KES,Annual,Enterprise,"Financial statements, mobile money",Confidential,MVP,True
+C09,Enterprise profile,Years in operation,Years since the business started,Years,Static,Enterprise,Lender KYC,Confidential,Phase 2,False
+C10,Enterprise profile,Formally registered,Registered with the Business Registration Service or county,Flag,Static,Enterprise,"BRS, lender KYC",Confidential,MVP,True
+C11,Enterprise profile,Land tenure,"Title, lease, family or communal",Category,Static,Enterprise,Lender KYC,Confidential,Phase 2,False
+C12,Enterprise profile,Farm or operating size,"Hectares cultivated, herd size or throughput capacity",Unit,Annual,Enterprise,Lender appraisal,Confidential,Phase 2,False
+C13,Enterprise profile,Irrigation access,Share of cultivated area irrigated,%,Annual,Enterprise,"Lender appraisal, county irrigation data",Confidential,Phase 2,False
+C14,Enterprise profile,Cooperative membership,Member of a registered cooperative,Flag,Static,Enterprise,State Department for Cooperatives,Confidential,Phase 2,False
+C15,Enterprise profile,Contracted sales share,Share of sales under a written offtake contract,%,Annual,Enterprise,"Lender appraisal, offtaker data",Confidential,MVP,True
+C16,Enterprise profile,Largest buyer share,Sales to largest buyer divided by total sales,%,Annual,Enterprise,"Lender appraisal, mobile money",Confidential,MVP,True
+C17,Enterprise profile,Insured,"Crop, livestock or asset insurance in force",Flag,Annual,Enterprise,"Insurers, index insurance programmes",Confidential,MVP,True
+C18,Enterprise profile,Certification,"GlobalG.A.P., Fairtrade, organic or export registration",Category,Annual,Enterprise,"Certifiers, KEPHIS, AFA",Confidential,Phase 3,False
+D01,Behavioural and cash flow,Monthly inflows,Credits to operating accounts and mobile money,KES,Monthly,Enterprise,"Bank statements, mobile money",Highly confidential,MVP,True
+D02,Behavioural and cash flow,Sales versus last season,Last 3 months inflows divided by same months last year minus 1,%,Monthly,Enterprise,Derived,Highly confidential,MVP,True
+D03,Behavioural and cash flow,Receivable days,Receivables divided by sales times 365,Days,Monthly,Enterprise,"Management accounts, offtaker data",Confidential,MVP,True
+D04,Behavioural and cash flow,Receivable days change,Receivable days now minus 3 months ago,Days,Monthly,Enterprise,Derived,Confidential,MVP,True
+D05,Behavioural and cash flow,Utilisation change,Utilisation now minus 3 months ago,pp,Monthly,Loan,Derived,Confidential,MVP,True
+D06,Behavioural and cash flow,Late payment months,Months with 1 to 29 days past due in last 6 months,Count,Monthly,Loan,Derived,Confidential,MVP,True
+D07,Behavioural and cash flow,"Worst days past due, 6 months",Maximum days past due over 6 months,Days,Monthly,Loan,Derived,Confidential,MVP,True
+D08,Behavioural and cash flow,Cash cycle,Days from input purchase to cash receipt from buyer,Days,Static,Enterprise,"Value-chain profile, lender appraisal",Restricted,MVP,True
+D09,Behavioural and cash flow,Account balance volatility,Coefficient of variation of month-end balances,Ratio,Monthly,Enterprise,Bank statements,Highly confidential,Phase 2,False
+D10,Behavioural and cash flow,Cheque or debit order returns,Number of bounced payments,Count,Monthly,Enterprise,Lender payments system,Confidential,Phase 2,False
+D11,Behavioural and cash flow,Credit bureau enquiries,Number of new enquiries in last 3 months,Count,Monthly,Enterprise,Credit reference bureaus,Highly confidential,Phase 2,False
+D12,Behavioural and cash flow,Other lender arrears,Days past due at other institutions,Days,Monthly,Enterprise,Credit reference bureaus,Highly confidential,Phase 2,False
+D13,Behavioural and cash flow,Buyer payment delays,Days offtaker payments are late versus contract,Days,Monthly,Enterprise,Offtaker or cooperative systems,Confidential,Phase 3,False
+D14,Behavioural and cash flow,Input purchase volume,Value of inputs bought,KES,Monthly,Enterprise,Agro-dealer and e-voucher systems,Confidential,Phase 3,False
+D15,Behavioural and cash flow,Delivery volumes to buyer,Kilograms or litres delivered,Unit,Monthly,Enterprise,"Cooperative, processor, KTDA-type records",Confidential,Phase 3,False
+D16,Behavioural and cash flow,Product-cycle mismatch,"Term loan or overdraft on a cash cycle of 110 days or more for producers, cooperatives, aggregators",Flag,Monthly,Loan,Derived,Confidential,MVP,True
+E01,Macro and monetary,Central Bank Rate,Policy rate set by the Monetary Policy Committee,%,Monthly,National,CBK,Public,MVP,True
+E02,Macro and monetary,Headline inflation,12-month change in CPI,%,Monthly,National,KNBS,Public,MVP,True
+E03,Macro and monetary,Food inflation,12-month change in food CPI,%,Monthly,National,KNBS,Public,Phase 2,False
+E04,Macro and monetary,USD/KES exchange rate,Mean monthly exchange rate,KES,Monthly,National,CBK,Public,MVP,True
+E05,Macro and monetary,Diesel pump price,Nairobi retail diesel price,KES per litre,Monthly,National,EPRA,Public,MVP,True
+E06,Macro and monetary,Fertiliser price index,Index of retail fertiliser prices,Index,Monthly,National,"MoALD, KAMIS, World Bank Pink Sheet",Public,MVP,True
+E07,Macro and monetary,Animal feed price index,Index of feed prices,Index,Monthly,National,"KAMIS, industry associations",Public,MVP,True
+E08,Macro and monetary,Average lending rate,Weighted average commercial bank lending rate,%,Monthly,National,CBK,Public,Phase 2,False
+E09,Macro and monetary,Private sector credit growth,12-month growth in private sector credit,%,Monthly,National,CBK,Public,Phase 2,False
+E10,Macro and monetary,Agriculture GDP growth,"Real growth in agriculture, forestry and fishing",%,Quarterly,National,KNBS Quarterly GDP,Public,Phase 2,False
+E11,Macro and monetary,Agriculture share of GDP,Agriculture value added divided by GDP,%,Annual,National,KNBS Economic Survey,Public,Phase 2,False
+E12,Macro and monetary,Banking sector agriculture NPL,Gross NPL ratio for the agriculture sector,%,Quarterly,National,"CBK, KBA State of the Banking Industry",Public,MVP,False
+E13,Macro and monetary,Government agriculture spending,National and county budget allocation to agriculture,KES,Annual,County,Controller of Budget,Public,Phase 3,False
+E14,Macro and monetary,Diaspora remittances,Monthly remittance inflows,USD,Monthly,National,CBK,Public,Phase 3,False
+E15,Macro and monetary,Electricity tariff,Commercial tariff per kWh,KES,Monthly,National,EPRA,Public,Phase 3,False
+E16,Macro and monetary,Mobile money value,Value of mobile money transactions,KES,Monthly,National,CBK,Public,Phase 3,False
+F01,Climate and satellite,Rainfall anomaly,Monthly rainfall versus long-term mean,%,Monthly,County,"KMD, CHIRPS",Public,MVP,True
+F02,Climate and satellite,"Rainfall anomaly, 3 months",Mean anomaly over last 3 months,%,Monthly,County,Derived,Public,MVP,True
+F03,Climate and satellite,Last season rainfall,Mean anomaly over last 6 months,%,Monthly,County,Derived,Public,MVP,True
+F04,Climate and satellite,Rainfall volatility,Standard deviation of monthly anomalies,pp,Monthly,County,Derived,Public,MVP,True
+F05,Climate and satellite,Vegetation anomaly (NDVI),Vegetation index versus long-term mean,%,Monthly,County,"MODIS, Copernicus, NDMA VCI",Public,MVP,True
+F06,Climate and satellite,Drought phase,"Normal, alert, alarm, emergency",Category,Monthly,County,NDMA early warning bulletins,Public,MVP,True
+F07,Climate and satellite,Seasonal rainfall outlook,Forecast rainfall versus normal for next season,%,Seasonal,County,"KMD, ICPAC",Public,MVP,True
+F08,Climate and satellite,Soil moisture anomaly,Root-zone soil moisture versus normal,%,Monthly,County,"SMAP, Copernicus",Public,Phase 2,False
+F09,Climate and satellite,Temperature anomaly,Mean temperature versus long-term mean,deg C,Monthly,County,"KMD, ERA5",Public,Phase 2,False
+F10,Climate and satellite,Flood events,Number of flood events reported,Count,Monthly,County,"NDMA, Kenya Red Cross",Public,Phase 2,False
+F11,Climate and satellite,Irrigation share,Irrigated share of cropland,%,Annual,County,National Irrigation Authority,Public,MVP,True
+F12,Climate and satellite,Climate sensitivity of chain,"Expert rating of yield sensitivity to rainfall, 0 to 1",Score,Static,Value chain,"Platform methodology, KALRO",Public,MVP,True
+F13,Climate and satellite,Pest and disease alerts,"Fall armyworm, locust or livestock disease alerts",Count,Monthly,County,"MoALD, FAO, Directorate of Veterinary Services",Public,Phase 2,False
+F14,Climate and satellite,Farm-level vegetation index,NDVI at plot boundary,%,Fortnightly,Plot,Satellite imagery with geo-tagged farms,Confidential,Phase 3,False
+F15,Climate and satellite,Heat stress days,Days above crop or livestock threshold,Count,Monthly,County,"ERA5, KMD",Public,Phase 3,False
+F16,Climate and satellite,Water stress index,Surface water availability for livestock,Index,Monthly,County,NDMA,Public,Phase 3,False
+F17,Climate and satellite,Forage condition,Pasture condition in pastoral counties,Index,Monthly,County,"NDMA, satellite",Public,Phase 2,False
+G01,Market and prices,Farm-gate price index,Producer price index by value chain,Index,Monthly,Value chain,"KAMIS, AFA directorates, KDB, NCPB",Public,MVP,True
+G02,Market and prices,"Price change, 3 months",Price index now divided by 3 months ago minus 1,%,Monthly,Value chain,Derived,Public,MVP,True
+G03,Market and prices,Price volatility,"Standard deviation of monthly log price changes, 12 months",Ratio,Monthly,Value chain,Derived,Public,MVP,True
+G04,Market and prices,Input cost index,"Weighted index of fertiliser, seed, feed, chemicals",Index,Monthly,Value chain,"KAMIS, agro-dealers",Public,MVP,True
+G05,Market and prices,"Input cost change, 6 months",Input index now divided by 6 months ago minus 1,%,Monthly,Value chain,Derived,Public,MVP,True
+G06,Market and prices,Margin index,Price index divided by input cost index,Index,Monthly,Value chain,Derived,Public,MVP,True
+G07,Market and prices,Wholesale market price,Wholesale price at main markets,KES per unit,Weekly,Market,KAMIS,Public,Phase 2,False
+G08,Market and prices,Retail price,Retail price of key products,KES per unit,Monthly,County,KNBS CPI micro prices,Public,Phase 2,False
+G09,Market and prices,"Auction price, tea",Mombasa auction average price,USD per kg,Weekly,National,"Tea Board, East African Tea Trade Association",Public,Phase 2,False
+G10,Market and prices,"Auction price, coffee",Nairobi Coffee Exchange average price,USD per 50kg,Weekly,National,Nairobi Coffee Exchange,Public,Phase 2,False
+G11,Market and prices,Milk producer price,Price paid to farmers per litre,KES per litre,Monthly,County,Kenya Dairy Board,Public,Phase 2,False
+G12,Market and prices,Maize producer price,NCPB and market maize price per 90kg bag,KES per bag,Monthly,County,"NCPB, KAMIS",Public,Phase 2,False
+G13,Market and prices,Cross-border price gap,Kenya price minus regional price,%,Monthly,Value chain,"FEWS NET, EAGC",Public,Phase 3,False
+G14,Market and prices,World commodity price,International benchmark price,USD,Monthly,Global,"World Bank Pink Sheet, FAO",Public,Phase 2,False
+G15,Market and prices,"Buyer concentration, chain",Share of volume bought by top 5 buyers,%,Annual,Value chain,"AFA, industry data",Restricted,Phase 3,False
+G16,Market and prices,Warehouse receipt volume,Commodities stored under receipts,Tonnes,Monthly,County,Warehouse Receipt System Council,Public,Phase 3,False
+H01,Production and value-chain structure,Production index,Volume produced versus base year,Index,Monthly,Value chain,"MoALD, AFA directorates, KDB",Public,MVP,True
+H02,Production and value-chain structure,"Production change, 12 months",Production index now divided by 12 months ago minus 1,%,Monthly,Value chain,Derived,Public,MVP,True
+H03,Production and value-chain structure,Market value change,Price times production change over 12 months,%,Monthly,Value chain,Derived,Public,MVP,True
+H04,Production and value-chain structure,Area planted,Hectares planted by crop,Hectares,Seasonal,County,"MoALD, county departments",Public,Phase 2,False
+H05,Production and value-chain structure,Yield,Output per hectare or per animal,Unit,Seasonal,County,"MoALD, KALRO",Public,Phase 2,False
+H06,Production and value-chain structure,Livestock population,"Head of cattle, goats, poultry",Count,Annual,County,"KNBS census, Directorate of Livestock",Public,Phase 2,False
+H07,Production and value-chain structure,Number of enterprises,"Estimated agri SMEs by chain, county and actor",Count,Annual,Segment,"KNBS MSME survey, cooperatives registry, AFA licences",Restricted,MVP,True
+H08,Production and value-chain structure,Average enterprise turnover,"Mean turnover by chain, county and actor",KES,Annual,Segment,"KNBS, lender data",Restricted,MVP,True
+H09,Production and value-chain structure,Working-capital need,Turnover times cash cycle divided by 365,KES,Annual,Segment,Derived,Restricted,MVP,True
+H10,Production and value-chain structure,Financing demand,Enterprises times working-capital need plus investment need,KES,Annual,Segment,Derived,Restricted,MVP,True
+H11,Production and value-chain structure,Harvest calendar,Main and secondary harvest months,Months,Static,Value chain,"MoALD crop calendars, FAO",Public,MVP,True
+H12,Production and value-chain structure,Storage capacity,Certified storage capacity,Tonnes,Annual,County,"WRS Council, NCPB",Public,Phase 3,False
+H13,Production and value-chain structure,Processing capacity utilisation,Throughput divided by installed capacity,%,Quarterly,Value chain,"Processors, AFA",Restricted,Phase 3,False
+H14,Production and value-chain structure,Cooperatives registered,Active agricultural cooperatives,Count,Annual,County,State Department for Cooperatives,Public,Phase 2,False
+H15,Production and value-chain structure,Post-harvest loss,Share of output lost after harvest,%,Annual,Value chain,"KALRO, FAO APHLIS",Public,Phase 3,False
+H16,Production and value-chain structure,Extension coverage,Farmers reached by extension services,%,Annual,County,County departments,Public,Phase 3,False
+I01,Trade and export,Export value index,Export earnings by chain versus base,Index,Monthly,Value chain,"KNBS, KRA customs, AFA",Public,MVP,True
+I02,Trade and export,Export share of chain,Share of chain output exported,%,Annual,Value chain,"AFA, KNBS",Public,MVP,True
+I03,Trade and export,Export volume,Tonnes exported,Tonnes,Monthly,Value chain,"KRA customs, AFA",Public,Phase 2,False
+I04,Trade and export,Export price,Unit value of exports,USD per tonne,Monthly,Value chain,Derived from customs,Public,Phase 2,False
+I05,Trade and export,Top destination share,Share of exports to largest destination market,%,Quarterly,Value chain,KNBS trade statistics,Public,Phase 2,False
+I06,Trade and export,"Import volume, competing",Imports of competing products,Tonnes,Monthly,Value chain,KRA customs,Public,Phase 2,False
+I07,Trade and export,Interceptions and rejections,Export consignments rejected for residues or pests,Count,Monthly,Value chain,"KEPHIS, EU RASFF",Public,Phase 3,False
+I08,Trade and export,Trade finance volume,Letters of credit and export pre-finance issued,KES,Monthly,Value chain,Lenders,Confidential,Phase 3,False
+I09,Trade and export,FX earnings conversion,Share of export proceeds converted locally,%,Monthly,Enterprise,Lender FX desk,Confidential,Phase 3,False
+I10,Trade and export,Freight cost index,Container freight rate to main destinations,Index,Monthly,Global,Freight indices,Public,Phase 3,False
+I11,Trade and export,"Regional trade (EAC, COMESA)",Exports to regional markets,USD,Quarterly,Value chain,"KNBS, EAC",Public,Phase 3,False
+I12,Trade and export,Export concentration by buyer,Share of chain exports handled by top 5 exporters,%,Annual,Value chain,"AFA, KRA customs",Restricted,Phase 3,False
+I13,Trade and export,Phytosanitary compliance cost,Cost of certification and residue testing per tonne,KES per tonne,Annual,Value chain,"KEPHIS, industry",Public,Phase 3,False
+I14,Trade and export,Export seasonality,Share of annual exports shipped in peak quarter,%,Annual,Value chain,KNBS trade statistics,Public,Phase 2,False
+I15,Trade and export,Hedged FX exposure,Share of FX receivables hedged,%,Quarterly,Enterprise,Lender treasury,Confidential,Phase 3,False
+I16,Trade and export,Export licence holders,Registered exporters by chain,Count,Annual,Value chain,"AFA, HCD",Public,Phase 2,False
+J01,Inclusion,Women-owned,Majority women ownership or management,Flag,Static,Enterprise,Lender KYC,Confidential,MVP,True
+J02,Inclusion,Youth-owned,Majority owners aged 18 to 35,Flag,Static,Enterprise,Lender KYC,Confidential,MVP,True
+J03,Inclusion,First-time borrower,No formal credit before this facility,Flag,Static,Enterprise,"Credit reference bureau, lender",Confidential,MVP,True
+J04,Inclusion,Share of borrowers by group,Group borrowers divided by all borrowers,%,Monthly,Segment,Derived,Restricted,MVP,True
+J05,Inclusion,Share of credit by group,Group balance divided by total balance,%,Monthly,Segment,Derived,Restricted,MVP,True
+J06,Inclusion,Approval rate gap,Group approval rate minus others,pp,Monthly,Segment,Derived,Restricted,MVP,True
+J07,Inclusion,Average loan size gap,Group average loan divided by others,Ratio,Monthly,Segment,Derived,Restricted,MVP,True
+J08,Inclusion,Pricing gap,Group average rate minus others,pp,Monthly,Segment,Derived,Restricted,MVP,True
+J09,Inclusion,Suitability rate,Share of borrowers in a product that matches their cash cycle,%,Monthly,Segment,Derived,Restricted,MVP,True
+J10,Inclusion,Resilience rate,Share of borrowers insured or with contracted sales,%,Monthly,Segment,Derived,Restricted,MVP,True
+J11,Inclusion,ASAL credit share,Balance in ASAL counties divided by total,%,Monthly,Segment,Derived,Restricted,MVP,True
+J12,Inclusion,Smallholder reach,Borrowers with less than 5 acres,Count,Monthly,Segment,Lender appraisal,Restricted,Phase 2,False
+J13,Inclusion,"Credit access, adults",Share of adults using formal credit,%,Periodic,National,FinAccess Household Survey,Public,Phase 2,False
+J14,Inclusion,Persons with disability,Enterprise owned by a person with disability,Flag,Static,Enterprise,Lender KYC,Highly confidential,Phase 3,False
+J15,Inclusion,Digital loan share,Share of agri borrowers served through digital channels,%,Monthly,Segment,Lender channel data,Restricted,Phase 2,False
+J16,Inclusion,Distance to branch or agent,Kilometres from enterprise to nearest access point,km,Annual,Enterprise,"Geo-coded KYC, CBK access point maps",Confidential,Phase 3,False
+J17,Inclusion,Graduation rate,"First-time borrowers who take a second, larger loan",%,Quarterly,Segment,Derived,Restricted,Phase 2,False
+K01,Derived scores and indices,Credit risk score,"Weighted: portfolio quality 30, behaviour 20, leverage 15, cash-flow stress 15, concentration 10, deterioration 10",0 to 100,Monthly,Segment,Platform,Restricted,MVP,True
+K02,Derived scores and indices,Climate risk score,"Weighted: exposure 30, volatility 25, current anomaly 20, outlook 15, adaptive capacity gap 10",0 to 100,Monthly,Segment,Platform,Restricted,MVP,True
+K03,Derived scores and indices,Market risk score,"Weighted: price volatility 30, price trend 20, input pressure 20, buyer concentration 15, export and FX 15",0 to 100,Monthly,Segment,Platform,Restricted,MVP,True
+K04,Derived scores and indices,Risk index,0.45 credit + 0.30 climate + 0.25 market,0 to 100,Monthly,Segment,Platform,Restricted,MVP,True
+K05,Derived scores and indices,Opportunity score,"Weighted: gap 25, credit growth 20, demand growth 15, quality 15, market growth 10, borrower growth 10, suitability 5",0 to 100,Monthly,Segment,Platform,Restricted,MVP,True
+K06,Derived scores and indices,Credibility weight,"Borrowers divided by 30, capped at 1; shrinks small-segment scores toward the average",0 to 1,Monthly,Segment,Platform,Restricted,MVP,True
+K07,Derived scores and indices,Quadrant,"Grow, grow with structure, selective, tighten and monitor",Category,Monthly,Segment,Platform,Restricted,MVP,True
+K08,Derived scores and indices,Segment early warning status,"Green, amber (2 signals), red (3 or more) from 7 market, climate and credit signals",Category,Monthly,Segment,Platform,Restricted,MVP,True
+K09,Derived scores and indices,Financing gap,Financing demand minus formal credit observed divided by market coverage,KES,Monthly,Segment,Platform,Restricted,MVP,True
+K10,Derived scores and indices,Credit penetration,Formal credit divided by financing demand,%,Monthly,Segment,Platform,Restricted,MVP,True
+K11,Derived scores and indices,Borrower 3-month default probability,Logistic model of 30+ DPD or restructure within 3 months,%,Monthly,Loan,Platform,Confidential,MVP,True
+K12,Derived scores and indices,Trigger points,"Sum of severity points of fired triggers, capped at 100",Points,Monthly,Loan,Platform,Confidential,MVP,True
+K13,Derived scores and indices,Borrower warning score,0.65 model points + 0.35 trigger points,0 to 100,Monthly,Loan,Platform,Confidential,MVP,True
+K14,Derived scores and indices,Borrower status,"Green, amber, red, NPL",Category,Monthly,Loan,Platform,Confidential,MVP,True
+K15,Derived scores and indices,Product fit score,"Rule score of each product against actor, cycle, contracts, collateral and climate",0 to 100,Monthly,Enterprise,Platform,Confidential,MVP,True
+K16,Derived scores and indices,Scenario cash-flow change,Revenue and cost shock transmitted through actor and county exposure,%,On demand,Loan,Platform,Confidential,MVP,True
+K17,Derived scores and indices,Stressed expected loss,Stressed 12-month PD times LGD times exposure,KES,On demand,Segment,Platform,Restricted,MVP,True
+M01,Market surveillance,Event identifier,Unique reference for a logged development,ID,Event,Event,Platform event log,Public,MVP,True
+M02,Market surveillance,Event date,"Announcement date and its precision (day, year, figures as at)",Date,Event,Event,Primary source,Public,MVP,True
+M03,Market surveillance,Event category,"Finance, DFIs, banks, policy, monetary, climate, market infrastructure, funding risk",Category,Event,Event,Platform tagging,Public,MVP,True
+M04,Market surveillance,Event type,"Guarantee, credit line, first-loss cover, subsidy, rate decision, product launch and similar",Category,Event,Event,Platform tagging,Public,MVP,True
+M05,Market surveillance,Institution and partner,"Lender, DFI, government body or donor involved",Text,Event,Event,Primary source,Public,MVP,True
+M06,Market surveillance,Instrument,"Credit line, guarantee, risk-sharing, subsidy, collateral infrastructure",Text,Event,Event,Primary source,Public,MVP,True
+M07,Market surveillance,Announced amount,Published value converted to KES; blank where no Kenya allocation is disclosed,KES,Event,Event,"Primary source, CBK exchange rate",Public,MVP,True
+M08,Market surveillance,Targeted value chains and geography,"Value chains, counties or regions the event names",Text,Event,Event,"Primary source, platform tagging",Public,MVP,True
+M09,Market surveillance,Financing effect,"Credit supply up, risk sharing up, input costs down, market access up, production risk up, funding withdrawn",Category,Event,Event,Platform analyst,Public,MVP,True
+M10,Market surveillance,Event status,"Announced, active, completed or historical",Category,Monthly,Event,Platform analyst,Public,MVP,True
+M11,Market surveillance,Source confidence,"High for primary sources, medium for press reports or performance totals",Category,Event,Event,Platform analyst,Public,MVP,True
+M12,Market surveillance,Follow-through growth,Credit growth in the targeted segment minus market growth since the event,pp,Monthly,Segment,Derived from loan tapes,Restricted,Phase 2,True
+L01,Data quality and metadata,Source system,Originating system or publisher,Text,Per load,Dataset,Platform metadata,Restricted,MVP,True
+L02,Data quality and metadata,Last updated,Date of latest record,Date,Per load,Dataset,Platform metadata,Restricted,MVP,True
+L03,Data quality and metadata,Coverage,Share of the market represented in the data,%,Per load,Dataset,Platform metadata,Restricted,MVP,True
+L04,Data quality and metadata,Confidence level,"High, medium or low by sample size and coverage",Category,Monthly,Segment,Platform,Restricted,MVP,True
+L05,Data quality and metadata,Institutions in cell,Number of reporting institutions in an aggregate,Count,Monthly,Segment,Platform,Restricted,MVP,True
+L06,Data quality and metadata,Borrowers in cell,Number of borrowers in an aggregate,Count,Monthly,Segment,Platform,Restricted,MVP,True
+L07,Data quality and metadata,Suppression flag,1 if fewer than 3 institutions or 10 borrowers,Flag,Monthly,Segment,Platform,Restricted,MVP,True
+L08,Data quality and metadata,Completeness,Share of mandatory fields populated,%,Per load,Dataset,Platform data quality checks,Restricted,MVP,False
+L09,Data quality and metadata,Validity failures,Records failing range or code checks,Count,Per load,Dataset,Platform data quality checks,Restricted,MVP,False
+L10,Data quality and metadata,Duplicate records,Records sharing a key,Count,Per load,Dataset,Platform data quality checks,Restricted,MVP,False
+L11,Data quality and metadata,Taxonomy mapping rate,Share of loans mapped to value chain and actor,%,Per load,Dataset,Platform data quality checks,Restricted,MVP,False
+L12,Data quality and metadata,Model version,Version of scoring model used,Text,Per run,Model,Model registry,Restricted,Phase 2,False
+L13,Data quality and metadata,Consent flag,Borrower consent for data sharing recorded,Flag,Static,Enterprise,"Lender consent register, Data Protection Act 2019",Highly confidential,Phase 2,False
+L14,Data quality and metadata,Access log,"User, time and view of confidential data",Log,Event,User,Platform audit trail,Highly confidential,Phase 2,False
+L15,Data quality and metadata,Reporting lag,Days between period end and data receipt,Days,Per load,Dataset,Platform metadata,Restricted,MVP,False
+L16,Data quality and metadata,Revision flag,Record changed after first publication,Flag,Per load,Dataset,Platform metadata,Restricted,Phase 2,False
+L17,Data quality and metadata,Reconciliation difference,Loan tape total minus regulatory return total,%,Monthly,Institution,Platform data quality checks,Confidential,MVP,False
